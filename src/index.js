@@ -4,6 +4,7 @@ import App from './App';
 import 'blitzy-ui/styles/global.css'
 import reportWebVitals from './reportWebVitals';
 import { BlitzyThemeProvider } from 'blitzy-ui';
+import './index.css';
 
 // Define custom themes without needing daisyUI or Tailwind
 const myCustomThemes = [

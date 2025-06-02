@@ -1,13 +1,98 @@
+/*
+ * CUSTOM FONTS GUIDE
+ * ==================
+ * Follow the steps below to add and use your own fonts:
+ *
+ * STEP 1: Import fonts from Google Fonts or other CDN
+ * Uncomment the line below and replace with your desired font:
+ */
+/*@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');*/
+
+/*
+ * Alternative: You can also add multiple fonts like this:
+ * @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600&display=swap');
+ */
+
+/*
+ * STEP 2: Define CSS custom properties (variables) for your fonts
+ * This makes it easy to reuse fonts throughout your app and change them globally
+ */
+:root {
+  /* Primary font - used for headings and main text */
+  --font-primary: 'Inter', system-ui, sans-serif;
+
+  /*
+   * You can define additional font variables:
+   * --font-secondary: 'Roboto', Arial, sans-serif;
+   * --font-heading: 'Open Sans', Georgia, serif;
+   * --font-mono: 'Fira Code', 'Courier New', monospace;
+   */
+}
+
+/*
+ * STEP 3: Apply fonts to elements
+ * Use the CSS variables you defined above
+ */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  /* Apply your primary font to the entire body */
+  font-family: var(--font-primary), serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/*
+ * For code blocks, use a monospace font for better readability
+ */
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/*
+ * EXAMPLE: Using custom fonts in your components
+ * You can reference the CSS variables in any class or component
+ */
+.test-button {
+  color: cadetblue;
+  font-family: var(--font-primary), serif;
+}
+
+/*
+ * MORE EXAMPLES:
+ *
+ * .heading {
+ *   font-family: var(--font-heading);
+ *   font-weight: 700;
+ *   font-size: 2rem;
+ * }
+ *
+ * .button {
+ *   font-family: var(--font-primary);
+ *   font-weight: 500;
+ * }
+ *
+ * .code-snippet {
+ *   font-family: var(--font-mono);
+ *   font-size: 0.9rem;
+ * }
+ */
+
+/*
+ * TIPS:
+ * 1. Always provide fallback fonts (system-ui, sans-serif, etc.)
+ * 2. Use font-display: swap in your @import for better performance
+ * 3. Consider using CSS variables for consistent font usage
+ * 4. Test your fonts on different devices and browsers
+ * 5. For local fonts, place them in public/fonts/ and use @font-face
+ *
+ * LOCAL FONT EXAMPLE:
+ * @font-face {
+ *   font-family: 'MyCustomFont';
+ *   src: url('./fonts/MyCustomFont.woff2') format('woff2'),
+ *        url('./fonts/MyCustomFont.woff') format('woff');
+ *   font-weight: normal;
+ *   font-style: normal;
+ *   font-display: swap;
+ * }
+ */
