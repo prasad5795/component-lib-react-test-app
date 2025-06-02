@@ -1,19 +1,19 @@
-import { Badge, Button, useTheme } from 'blitzy-ui';
+import { Badge, Button, useBlitzyTheme } from 'blitzy-ui';
 
 function App() {
-  const { theme, changeTheme, themes } = useTheme();
+  const { currentThemeName, changeTheme, themes } = useBlitzyTheme();
 
   return (
     <div className="App" style={{ padding: '2rem' }}>
       <h1>Theme Demo</h1>
-      <p>Current theme: {theme}</p>
+      <p>Current theme: {currentThemeName}</p>
       
       <div style={{ marginBottom: '2rem' }}>
         <h3>Available Themes:</h3>
         {themes.map((t) => (
           <Button 
             key={t.name}
-            variant={theme === t.name ? 'primary' : 'secondary'}
+            variant={currentThemeName === t.name ? 'primary' : 'secondary'}
             onClick={() => changeTheme(t.name)}
             style={{ marginRight: '0.5rem', marginBottom: '0.5rem' }}
           >
